@@ -21,52 +21,52 @@ export default new Router({
             {
               path: "page-list",
               name: "pageList",
-              component: () => import("@/pages/home/page-list"),
+              component: () => import("@/pages/home/page-list")
             },
             {
               path: "my-template",
               name: "myTemplate",
-              component: () => import("@/pages/home/my-template"),
+              component: () => import("@/pages/home/my-template")
             },
             {
               path: "page-data",
               name: "pageData",
-              component: () => import("@/pages/home/page-data"),
+              component: () => import("@/pages/home/page-data")
             },
             {
               path: "page-data-detail",
               name: "pageDataDetail",
-              component: () => import("@/pages/home/page-data-detail"),
+              component: () => import("@/pages/home/page-data-detail")
             },
             {
               path: "template-list",
               name: "templateList",
-              component: () => import("@/pages/home/template-list"),
-            },
-          ],
+              component: () => import("@/pages/home/template-list")
+            }
+          ]
         },
         {
           path: "/editor",
           name: "Editor",
-          component: () => import("@/pages/editor/Index"),
-        },
-      ],
+          component: () => import("@/pages/editor/Index")
+        }
+      ]
     },
     {
       path: "/",
       name: "Layout",
       component: () => import("@/pages/layout2"),
-      redirect: { name: "Home" },
+      // redirect: { name: "Home" },
       children: [
         {
           path: "/editor2",
           name: "Editor2",
           component: () => import("@/pages/editor/Index2"),
           meta: {
-            noNeedLogin: true,
-          },
-        },
-      ],
+            noNeedLogin: true
+          }
+        }
+      ]
     },
     {
       path: "/login",
@@ -75,8 +75,8 @@ export default new Router({
       meta: {
         hideHeader: true,
         trust: true,
-        noNeedLogin: true,
-      },
-    },
-  ],
+        noNeedLogin: true
+      }
+    }
+  ]
 });

@@ -170,6 +170,7 @@ export default {
       this.$API.updatePage({ pageData: this.projectData }).then(() => {
         this.$message.success("保存成功!");
         this.showPreview = false;
+        window.parent.postMessage({ event: "save", page: this.projectData }, "*");
       });
     },
     /**
@@ -202,7 +203,8 @@ export default {
         type: "warning"
       })
         .then(() => {
-          this.$router.push({ name: "Home" });
+          window.parent.postMessage({ event: "return" }, "*");
+          // this.$router.push({ name: "Home" });
         })
         .catch(() => {});
     },
