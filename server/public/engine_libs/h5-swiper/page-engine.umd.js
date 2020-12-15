@@ -9784,7 +9784,8 @@ module.exports = function (it) {
       return baseWrapperValue(this.__wrapped__, this.__actions__);
     }
 
-    /*------------------------------------------------------------------------*/
+      return result;
+    });
 
     /**
      * Creates an object composed of keys generated from the results of running
@@ -12122,6 +12123,9 @@ module.exports = function (it) {
         (isObjectLike(value) && baseGetTag(value) == boolTag);
     }
 
+    // Expose `MapCache`.
+    memoize.Cache = MapCache;
+
     /**
      * Checks if `value` is a buffer.
      *
@@ -13993,6 +13997,8 @@ module.exports = function (it) {
       }
     }, getIteratee);
 
+    /*------------------------------------------------------------------------*/
+
     /**
      * Invokes the method at `path` of `object`.
      *
@@ -15278,6 +15284,8 @@ module.exports = function (it) {
       return args.length < 3 ? string : string.replace(args[1], args[2]);
     }
 
+    /*------------------------------------------------------------------------*/
+
     /**
      * Converts `string` to
      * [snake case](https://en.wikipedia.org/wiki/Snake_case).
@@ -15400,6 +15408,8 @@ module.exports = function (it) {
       target = baseToString(target);
       return string.slice(position, position + target.length) == target;
     }
+
+    /*------------------------------------------------------------------------*/
 
     /**
      * Creates a compiled template function that can interpolate data properties
@@ -16794,6 +16804,8 @@ module.exports = function (it) {
       return false;
     }
 
+    /*------------------------------------------------------------------------*/
+
     /**
      * This method returns a new empty object.
      *
@@ -17000,6 +17012,7 @@ module.exports = function (it) {
      * Computes `number` rounded down to `precision`.
      *
      * @static
+     * @since 3.0.0
      * @memberOf _
      * @since 3.10.0
      * @category Math
@@ -17049,7 +17062,6 @@ module.exports = function (it) {
      * the value is ranked. The iteratee is invoked with one argument: (value).
      *
      * @static
-     * @memberOf _
      * @since 4.0.0
      * @category Math
      * @param {Array} array The array to iterate over.
@@ -17193,6 +17205,7 @@ module.exports = function (it) {
      * Computes `number` rounded to `precision`.
      *
      * @static
+     * @since 0.1.0
      * @memberOf _
      * @since 3.10.0
      * @category Math
@@ -17216,6 +17229,7 @@ module.exports = function (it) {
      * Subtract two numbers.
      *
      * @static
+     * @since 0.1.0
      * @memberOf _
      * @since 4.0.0
      * @category Math
@@ -19510,6 +19524,8 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
       // Re-yield the result returned by the delegate method.
       return info;
     }
+  }
+});
 
     // The delegate iterator is finished, so forget it and continue with
     // the outer generator.
@@ -20878,7 +20894,6 @@ var config_0 = __webpack_require__("f355");
 
 
 
-
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
 
@@ -20920,15 +20935,15 @@ function _objectSpread(target) {
 
 var configDict = {
   development: {
-    baseURL: 'http://localhost:4000'
+    baseURL: "http://localhost:4000"
   },
   production: {
     baseURL: config_0.baseURL
   }
 };
 var currentConfigKey = "production";
-var isDev = "production" === 'development';
-var isTest = "production" === 'development';
+var isDev = "production" === "development";
+var isTest = "production" === "development";
 
 var configObj = _objectSpread(_objectSpread({
   isDevelop: isDev || isTest
@@ -20937,20 +20952,20 @@ var configObj = _objectSpread(_objectSpread({
   canvasH5Width: 375,
   canvasH5Height: 644,
   pageModeList: [{
-    value: 'h5',
-    label: 'H5',
+    value: "h5",
+    label: "H5",
     disabled: false
   }, {
-    value: 'longPage',
-    label: '长页H5',
+    value: "longPage",
+    label: "长页H5",
     disabled: false
   }, {
-    name: 'relativePage',
-    label: '排版图文',
+    name: "relativePage",
+    label: "排版图文",
     disabled: true
   }, {
-    value: 'pc',
-    label: 'PC页面',
+    value: "pc",
+    label: "PC页面",
     disabled: true
   }]
 });

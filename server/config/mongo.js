@@ -8,7 +8,7 @@ const options = {
 // password 数据库密码
 // localhost 数据库ip
 // dbname 数据库名称
-const url = "mongodb://admin:888888@localhost:27017/?authSource=admin";
+const url = "mongodb://admin:888888@localhost:27017/quark";
 
 module.exports = {
   connect: () => {
