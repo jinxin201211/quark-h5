@@ -65,6 +65,14 @@ export default new Router({
           meta: {
             noNeedLogin: true
           }
+        },
+        {
+          path: "/editor2pc",
+          name: "Editor2pc",
+          component: () => import("@/pages/editor/Index2pc"),
+          meta: {
+            noNeedLogin: true
+          }
         }
       ]
     },
