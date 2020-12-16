@@ -70,7 +70,7 @@ import imageLibs from "@client/components/image-libs";
 import { mapState } from "vuex";
 import html2canvas from "html2canvas";
 
-import editorProjectConfig from "@/pages/editor/DataModel";
+import editorProjectConfig from "./DataModel";
 
 export default {
   components: {
@@ -124,9 +124,12 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch("setPrjectData");
+    this.$store.dispatch("setPrjectDataPC");
 
     let newPageData = editorProjectConfig.getProjectConfig();
+    newPageData.pageMode = "pc";
+    console.log("newPageData");
+    console.log(newPageData);
     this.loading = true;
     const _this = this;
     this.$API
@@ -152,8 +155,9 @@ export default {
       this.$API
         .getPageDetail({ pageId: this.id })
         .then(res => {
+          console.log(res);
           this.loading = false;
-          this.$store.dispatch("setPrjectData", {
+          this.$store.dispatch("setPrjectDataPC", {
             ...res.body
           });
         })
@@ -165,7 +169,9 @@ export default {
      * 保存
      */
     async saveFn() {
-      // await this.screenshots()
+      // await this.screenshots();
+      console.log(this.projectData);
+      // return;
       // 提交数据再预览
       this.$API.updatePage({ pageData: this.projectData }).then(() => {
         this.$message.success("保存成功!");

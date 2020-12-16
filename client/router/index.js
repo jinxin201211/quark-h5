@@ -59,17 +59,17 @@ export default new Router({
       // redirect: { name: "Home" },
       children: [
         {
-          path: "/editor2",
-          name: "Editor2",
-          component: () => import("@/pages/editor/Index2"),
+          path: "/editor_h5",
+          name: "EditorH5",
+          component: () => import("@/pages/editorh5/Index"),
           meta: {
             noNeedLogin: true
           }
         },
         {
-          path: "/editor2pc",
-          name: "Editor2pc",
-          component: () => import("@/pages/editor/Index2pc"),
+          path: "/editor_pc",
+          name: "EditorPC",
+          component: () => import("@/pages/editorpc/Index"),
           meta: {
             noNeedLogin: true
           }

@@ -5,7 +5,7 @@ import $config from "../../config";
 
 const configDict = {
   development: {
-    baseURL: "http://localhost:4000",
+    baseURL: "http://localhost:8061",
   },
   production: {
     baseURL: $config.baseURL,
@@ -22,6 +22,8 @@ const configObj = {
   // h5模式宽高
   canvasH5Width: 375,
   canvasH5Height: 644,
+  canvasPCWidth: 640,
+  canvasPCHeight: 360,
   pageModeList: [
     {
       value: "h5",

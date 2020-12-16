@@ -70,7 +70,7 @@ import imageLibs from "@client/components/image-libs";
 import { mapState } from "vuex";
 import html2canvas from "html2canvas";
 
-import editorProjectConfig from "@/pages/editor/DataModel";
+import editorProjectConfig from "./DataModel";
 
 export default {
   components: {
