@@ -37,8 +37,6 @@ const actions = {
     dispatch("setActivePageUUID", state.projectData.pages[0].uuid);
   },
   setPrjectDataPC({ commit, state, dispatch }, data) {
-    console.log('setPrjectDataPC');
-    console.log(data);
     let projectData = data;
     if (!projectData) {
       projectData = editorProjectConfigPC.getProjectConfig();

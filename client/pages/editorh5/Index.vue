@@ -168,7 +168,11 @@ export default {
       // await this.screenshots()
       // 提交数据再预览
       this.$API.updatePage({ pageData: this.projectData }).then(() => {
-        this.$message.success("保存成功!");
+        this.$message({
+          showClose: true,
+          message: "保存成功!",
+          type: "success"
+        });
         this.showPreview = false;
         window.parent.postMessage({ event: "save", page: this.projectData }, "*");
       });

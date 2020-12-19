@@ -42,8 +42,6 @@ module.exports = app => ({
   async updatePage() {
     const { ctx, $service, $helper } = app;
     let { pageData } = ctx.request.body;
-    console.log("-------------------updatePage-------------------");
-    console.log(JSON.stringify(pageData));
     await $service.page.update(pageData);
     $helper.returnBody(true);
   },
@@ -122,8 +120,6 @@ module.exports = app => ({
     const { ctx, $service, $helper } = app;
     let { pageId } = ctx.request.query;
     const pageData = await $service.page.getPageDetail(pageId);
-    console.log("-------------------pageDetail--------------------");
-    console.log(pageData);
     $helper.returnBody(true, pageData);
   },
   /**
@@ -134,8 +130,6 @@ module.exports = app => ({
     const { ctx, $service } = app;
     let pageId = ctx.params._id;
     const pageData = await $service.page.getPageDetail(pageId);
-    console.log("-------------------view-------------------");
-    console.log(pageData);
     let pageMode = {
       h5: "h5-swiper",
       longPage: "h5-long",

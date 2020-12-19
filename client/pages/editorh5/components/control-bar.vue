@@ -26,10 +26,10 @@
         <p>导入psd</p>
       </div>
     </UploadPsd>
-    <div class="button-item" @click="showPreview">
+    <!-- <div class="button-item" @click="showPreview">
       <i class="iconfont iconyulan"></i>
       <p>预览保存</p>
-    </div>
+    </div> -->
     <div class="button-item" @click="save">
       <i class="iconfont iconbaocun"></i>
       <p>保存</p>

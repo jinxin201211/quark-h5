@@ -61,8 +61,6 @@ module.exports = app => ({
   async create(pageData) {
     const { ctx, $model } = app;
     let userData = ctx.userData;
-    console.log('-------------------create-------------------');
-    console.log(pageData);
     return await $model.page.create({
       ...pageData,
       author: userData._id
@@ -74,8 +72,6 @@ module.exports = app => ({
    * @returns {Promise<*>}
    */
   async update(pageData) {
-    console.log("-------------------update-------------------");
-    console.log(pageData);
     const { $model } = app;
     return await $model.page.findOneAndUpdate(
       { _id: pageData._id },
