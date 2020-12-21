@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev-client": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "dev-server": "nodemon server/app.js dev -L",
     "dev": "npm run dev-client",
     "build-client": "vue-cli-service build",
