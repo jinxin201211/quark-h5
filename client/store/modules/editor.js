@@ -40,7 +40,6 @@ const actions = {
     let projectData = data;
     if (!projectData) {
       projectData = editorProjectConfigPC.getProjectConfig();
-      console.log(projectData);
     }
     commit("setPrjectData", projectData);
     // 判断如果有页面择选中第一个没有则新建一个页面再选中第一个

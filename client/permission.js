@@ -8,7 +8,7 @@ import userModel from "@/libs/userModel";
 
 router.beforeEach(async (to, from, next) => {
   NProgress.start();
-  if (to.path === "/editor2" || to.path === "/editor2pc") {
+  if (to.path === "/editor_pc" || to.path === "/editor_h5") {
     let formData = {
       ...{
         email: "",
